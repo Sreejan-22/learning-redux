@@ -1,7 +1,7 @@
 const App = () => {
   return (
     <div>
-      <div>Redux</div>
+      <div>Hello Redux</div>
     </div>
   );
 };
