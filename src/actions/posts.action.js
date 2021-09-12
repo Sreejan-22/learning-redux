@@ -26,18 +26,14 @@ export const getPostsFailure = () => ({
 });
 
 // Combine them all in an asynchronous thunk
-export function fetchPosts() {
-  return async (dispatch) => {
-    dispatch(getPosts());
+export async function fetchPosts(dispatch) {
+  dispatch(getPosts());
 
-    try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts"
-      );
-      const data = await response.json();
-      dispatch(getPostsSuccess(data));
-    } catch (error) {
-      dispatch(getPostsFailure());
-    }
-  };
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await response.json();
+    dispatch(getPostsSuccess(data));
+  } catch (error) {
+    dispatch(getPostsFailure());
+  }
 }

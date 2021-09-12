@@ -7,8 +7,7 @@ import Post from "../components/Post";
 
 const Posts = ({ dispatch, loading, posts, hasErrors }) => {
   useEffect(() => {
-    // dispatch(fetchPosts());
-    fetchPosts()(dispatch);
+    fetchPosts(dispatch);
   }, [dispatch]);
 
   const renderPosts = () => {
