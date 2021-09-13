@@ -9,7 +9,8 @@ import { configureStore } from "@reduxjs/toolkit";
 
 // Local imports
 import App from "./App";
-import rootReducer from "./reducers";
+// import rootReducer from "./reducers";
+import { postsReducer } from "./slices/posts.slice";
 
 // assets
 import "./index.css";
@@ -18,7 +19,11 @@ import "./index.css";
 //   rootReducer,
 //   composeWithDevTools(applyMiddleware(thunk))
 // );
-const store = configureStore({ reducer: rootReducer });
+const store = configureStore({
+  reducer: {
+    posts: postsReducer,
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>

@@ -33,7 +33,7 @@ export const { getPosts, getPostsSuccess, getPostsFailure } =
 export const postsSelector = (state) => state.posts;
 
 // the reducer
-export default postsSlice.reducer;
+export const postsReducer = postsSlice.reducer;
 
 export function fetchPosts() {
   return async (dispatch) => {
